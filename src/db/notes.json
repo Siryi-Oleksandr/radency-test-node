@@ -1,0 +1,58 @@
+[
+  {
+    "id": "1",
+    "name": "Shopping list",
+    "created": "June 28, 2023",
+    "category": "Task",
+    "content": "Tomatoes, bread",
+    "dates": []
+  },
+  {
+    "id": "2",
+    "name": "New feature",
+    "created": "April 25, 2023",
+    "category": "Random Thought",
+    "content": "I’m gonna have a dentist appointment on the 3/5/2023, I moved it from 5/5/2023",
+    "dates": ["3/5/2023", "3/5/2023"]
+  },
+  {
+    "id": "3",
+    "name": "The theory of evolution",
+    "created": "May 25, 2023",
+    "category": "Idea",
+    "content": "It is something increadable",
+    "dates": []
+  },
+  {
+    "id": "4",
+    "name": "Books",
+    "created": "July 25, 2023",
+    "category": "Task",
+    "content": "Learn new material",
+    "dates": []
+  },
+  {
+    "id": "5",
+    "name": "Who is God",
+    "created": "April 25, 2023",
+    "category": "Random Thought",
+    "content": "Who did create world?",
+    "dates": []
+  },
+  {
+    "id": "6",
+    "name": "Pet project",
+    "created": "April 25, 2023",
+    "category": "Idea",
+    "content": "Create portfolio application",
+    "dates": []
+  },
+  {
+    "id": "7",
+    "name": "Learn English",
+    "created": "March 25, 2023",
+    "category": "Task",
+    "content": "Order new courses in English",
+    "dates": []
+  }
+]
