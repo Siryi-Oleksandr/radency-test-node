@@ -41,6 +41,15 @@ const getNoteById = controllerWrapper(async (req: Request, res: Response) => {
   res.json(note);
 });
 
+// * GET  /notes/stats
+const getStatistics = controllerWrapper(
+  async (_req: Request, res: Response) => {
+    const stats = notesService.getCountTasks();
+
+    res.json(stats);
+  }
+);
+
 // * PATCH  /notes:id
 const updateNoteById = controllerWrapper(
   async (req: Request, res: Response) => {
@@ -69,4 +78,11 @@ const deleteNoteById = controllerWrapper(
   }
 );
 
-export { addNote, getNotes, getNoteById, updateNoteById, deleteNoteById };
+export {
+  addNote,
+  getNotes,
+  getNoteById,
+  getStatistics,
+  updateNoteById,
+  deleteNoteById,
+};
