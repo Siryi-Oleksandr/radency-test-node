@@ -45,12 +45,14 @@ export class NotesService {
     return true;
   }
 
-  updateNoteById(id: string, updatedNote: INote): void {
+  updateNoteById(id: string, updatedNote: INote): boolean {
     const index = this.notes.findIndex((note) => note.id === id);
-    if (index !== -1) {
-      this.notes[index] = { ...updatedNote, id };
-      this.saveNotesToJson();
+    if (index === -1) {
+      return false;
     }
+    this.notes[index] = { ...updatedNote, id };
+    this.saveNotesToJson();
+    return true;
   }
 
   deleteNoteById(id: string): boolean {

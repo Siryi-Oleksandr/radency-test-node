@@ -14,6 +14,7 @@ const router = express.Router();
 router.post("/", isValidBody(joiService.noteSchema), addNote);
 router.get("/", getNotes);
 router.get("/:id", getNoteById);
+router.patch("/:id", isValidBody(joiService.noteSchema), updateNoteById);
 router.delete("/:id", deleteNoteById);
 
 export default router;

@@ -1,8 +1,6 @@
 import express, { NextFunction, Request, Response } from "express";
 import logger from "morgan";
 import cors from "cors";
-import dotenv from "dotenv";
-dotenv.config();
 import notesRouter from "routes/notesRouter";
 
 const app = express();

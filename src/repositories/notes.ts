@@ -44,14 +44,14 @@ const getNoteById = controllerWrapper(async (req: Request, res: Response) => {
 // * PATCH  /notes:id
 const updateNoteById = controllerWrapper(
   async (req: Request, res: Response) => {
-    const id: string = nanoid();
+    const { id } = req.params;
     const dates = parseDates(req.body.content);
-    const newNote: INote = { ...req.body, id, dates };
-    const result = notesService.createNote(newNote);
+    const updatedNote: INote = { ...req.body, id, dates };
+    const result = notesService.updateNoteById(id, updatedNote);
     if (!result) {
-      throw new HttpError(404, `Note have not created`);
+      throw new HttpError(404, `Note with "${id}" not found`);
     }
-    res.status(201).json(newNote);
+    res.json(updatedNote);
   }
 );
 
@@ -62,7 +62,7 @@ const deleteNoteById = controllerWrapper(
     const result = notesService.deleteNoteById(id);
 
     if (!result) {
-      throw new HttpError(404, `Task with "${id}" not found`);
+      throw new HttpError(404, `Note with "${id}" not found`);
     }
 
     res.json({ message: "Note deleted" });
