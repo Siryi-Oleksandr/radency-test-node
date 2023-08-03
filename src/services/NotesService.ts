@@ -18,39 +18,50 @@ export class NotesService {
       const data = fs.readFileSync(notesPath, "utf-8");
       return JSON.parse(data) as INote[];
     } catch (error) {
+      console.error("Error reading notes from JSON:", error);
       return [];
     }
   }
 
-  // private saveNotesToJson(): void {
-  //   fs.writeFileSync(notesPath, JSON.stringify(this.notes, null, 2), "utf-8");
-  // }
+  private saveNotesToJson(): void {
+    try {
+      fs.writeFileSync(notesPath, JSON.stringify(this.notes, null, 2), "utf-8");
+    } catch (error) {
+      throw new Error("Failed to save notes to JSON file");
+    }
+  }
 
-  getAllNotes(): INote[] {
+  selectAllNotes(): INote[] {
     return this.notes;
   }
 
-  // getNoteById(id: string): Note | undefined {
-  //   return this.notes.find((note) => note.id === id);
-  // }
+  selectNoteById(id: string): INote | undefined {
+    return this.notes.find((note) => note.id === id);
+  }
 
-  // addNote(note: Note): void {
-  //   this.notes.push(note);
-  //   this.saveNotesToJson();
-  // }
+  createNote(note: INote): boolean {
+    this.notes.push(note);
+    this.saveNotesToJson();
+    return true;
+  }
 
-  // updateNoteById(id: string, updatedNote: Note): void {
-  //   const index = this.notes.findIndex((note) => note.id === id);
-  //   if (index !== -1) {
-  //     this.notes[index] = { ...updatedNote, id };
-  //     this.saveNotesToJson();
-  //   }
-  // }
+  updateNoteById(id: string, updatedNote: INote): void {
+    const index = this.notes.findIndex((note) => note.id === id);
+    if (index !== -1) {
+      this.notes[index] = { ...updatedNote, id };
+      this.saveNotesToJson();
+    }
+  }
 
-  // deleteNoteById(id: string): void {
-  //   this.notes = this.notes.filter((note) => note.id !== id);
-  //   this.saveNotesToJson();
-  // }
+  deleteNoteById(id: string): boolean {
+    const note = this.selectNoteById(id);
+    if (!note) {
+      return false;
+    }
+    this.notes = this.notes.filter((note) => note.id !== id);
+    this.saveNotesToJson();
+    return true;
+  }
 }
 
 // const getNotesService = async () => {
