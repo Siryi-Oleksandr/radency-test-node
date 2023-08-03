@@ -39,4 +39,4 @@ class JoiService {
 
 const joiService = new JoiService();
 
-export { joiService };
+export default joiService;

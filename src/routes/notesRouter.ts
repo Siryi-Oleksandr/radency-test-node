@@ -6,9 +6,9 @@ import {
   getStatistics,
   updateNoteById,
   deleteNoteById,
-} from "repositories/notes";
+} from "services/notes";
 import isValidBody from "middlewares/isValidBody";
-import { joiService } from "services/JoiService";
+import { joiService } from "helpers";
 
 const router = express.Router();
 

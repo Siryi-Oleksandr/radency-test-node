@@ -1,7 +1,7 @@
 import { Response, Request } from "express";
 import { nanoid } from "nanoid";
 import { HttpError, controllerWrapper, parseDates } from "helpers";
-import { NotesService } from "services/NotesService";
+import { NotesService } from "repositories/NotesService";
 import { INote } from "types/INote";
 
 const notesService = new NotesService();
