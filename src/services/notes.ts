@@ -41,7 +41,7 @@ const getNoteById = controllerWrapper(async (req: Request, res: Response) => {
 // * GET  /notes/stats
 const getStatistics = controllerWrapper(
   async (_req: Request, res: Response) => {
-    const stats = notesService.getCountTasks();
+    const stats = notesService.getCountNotes();
 
     res.json(stats);
   }

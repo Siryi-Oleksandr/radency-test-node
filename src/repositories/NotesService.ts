@@ -31,16 +31,23 @@ export class NotesService {
 
   private countNotesByCategory(notes: INote[]) {
     const initialCount = {
-      Task: 0,
-      Idea: 0,
-      "Random Thought": 0,
+      Task: { archivedTrue: 0, archivedFalse: 0 },
+      Idea: { archivedTrue: 0, archivedFalse: 0 },
+      "Random Thought": { archivedTrue: 0, archivedFalse: 0 },
     };
 
     return notes.reduce((acc, note) => {
       const category = note.category;
+      const isArchived = note.archived;
+
       if (category in acc) {
-        acc[category]++;
+        if (isArchived) {
+          acc[category].archivedTrue++;
+        } else {
+          acc[category].archivedFalse++;
+        }
       }
+
       return acc;
     }, initialCount);
   }
@@ -79,7 +86,7 @@ export class NotesService {
     return true;
   }
 
-  getCountTasks() {
+  getCountNotes() {
     return this.countNotesByCategory(this.notes);
   }
 }
