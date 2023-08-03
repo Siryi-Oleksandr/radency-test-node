@@ -1,11 +1,14 @@
 [
   {
+    "name": "Drink water more",
+    "created": "April 25, 2023",
+    "category": "Idea",
+    "archived": true,
+    "content": "text 25/05/2023",
     "id": "4",
-    "name": "Books",
-    "created": "July 25, 2023",
-    "category": "Task",
-    "content": "Learn new material",
-    "dates": []
+    "dates": [
+      "25/05/2023"
+    ]
   },
   {
     "id": "5",
@@ -13,6 +16,7 @@
     "created": "April 25, 2023",
     "category": "Random Thought",
     "content": "Who did create world?",
+    "archived": false,
     "dates": []
   },
   {
@@ -21,6 +25,7 @@
     "created": "April 25, 2023",
     "category": "Idea",
     "content": "Create portfolio application",
+    "archived": false,
     "dates": []
   },
   {
@@ -29,6 +34,7 @@
     "created": "March 25, 2023",
     "category": "Task",
     "content": "Order new courses in English",
+    "archived": false,
     "dates": []
   },
   {
@@ -37,6 +43,7 @@
     "category": "Idea",
     "content": "text 25/05/2023",
     "id": "a3ym-8-ZdFDZwRYbQoGB5",
+    "archived": false,
     "dates": [
       "25/05/2023"
     ]
@@ -47,6 +54,7 @@
     "category": "Idea",
     "content": "text 25/05/2023",
     "id": "G0dciZyS1Kqkh-GWOZZ2N",
+    "archived": false,
     "dates": [
       "25/05/2023"
     ]
@@ -57,6 +65,7 @@
     "category": "Random Thought",
     "content": "text 25/05/2023",
     "id": "cxDQQhM6lTibONZk2rnjp",
+    "archived": false,
     "dates": [
       "25/05/2023"
     ]
@@ -67,6 +76,17 @@
     "category": "Task",
     "content": "text 25/05/2023",
     "id": "QbQZTaRNXo0dddg_kf5po",
+    "archived": false,
+    "dates": [
+      "25/05/2023"
+    ]
+  },
+  {
+    "name": "Drink water more",
+    "created": "April 25, 2023",
+    "category": "Idea",
+    "content": "text 25/05/2023",
+    "id": "_1iD7kL05L08FwH3gGgFM",
     "dates": [
       "25/05/2023"
     ]

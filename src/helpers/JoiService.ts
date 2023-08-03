@@ -34,6 +34,8 @@ class JoiService {
       "string.min": "The length of 'name' must be between 2 and 100 characters",
       "string.max": "The length of 'name' must be between 2 and 100 characters",
     }),
+
+    archived: Joi.boolean().required(),
   });
 }
 

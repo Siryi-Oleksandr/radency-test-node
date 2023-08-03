@@ -10,7 +10,8 @@ const notesService = new NotesService();
 const addNote = controllerWrapper(async (req: Request, res: Response) => {
   const id: string = nanoid();
   const dates = parseDates(req.body.content);
-  const newNote: INote = { ...req.body, id, dates };
+  const archived = false;
+  const newNote: INote = { ...req.body, id, dates, archived };
   const result = notesService.createNote(newNote);
   if (!result) {
     throw new HttpError(404, `Note have not created`);
