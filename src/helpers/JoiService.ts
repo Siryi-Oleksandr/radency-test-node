@@ -20,7 +20,7 @@ class JoiService {
     .messages({
       "any.required": "Missing required 'created' field",
       "string.pattern.base":
-        "The date format is incorrect. Please enter in the format 'April 25, 2023'",
+        "The date format is incorrect. Please enter in the format like 'April 25, 2023'",
     });
 
   private categoryValidation = Joi.string()
@@ -30,8 +30,10 @@ class JoiService {
 
   private contentValidation = Joi.string().min(2).max(100).required().messages({
     "any.required": "Missing required 'content' field",
-    "string.min": "The length of 'name' must be between 2 and 100 characters",
-    "string.max": "The length of 'name' must be between 2 and 100 characters",
+    "string.min":
+      "The length of 'content' must be between 2 and 100 characters",
+    "string.max":
+      "The length of 'content' must be between 2 and 100 characters",
   });
 
   //* Class methods

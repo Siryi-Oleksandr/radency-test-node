@@ -23,10 +23,6 @@ const addNote = controllerWrapper(async (req: Request, res: Response) => {
 const getNotes = controllerWrapper(async (_req: Request, res: Response) => {
   const notes = notesService.selectAllNotes();
 
-  if (!notes) {
-    throw new HttpError(404, `Notes not found`);
-  }
-
   res.json(notes);
 });
 
